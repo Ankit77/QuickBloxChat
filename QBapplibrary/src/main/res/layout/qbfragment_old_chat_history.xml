@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_previous_chat_linearmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color_white">
+
+    <com.indianic.qbchat.comman.QbCustomTextViewMedium
+        android:id="@+id/tv_nomessagefound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/no_message_found"
+        android:visibility="gone" />
+
+
+    <ListView
+        android:id="@+id/list_dialogs_chats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_dialogs_new_chat"
+        style="@style/FabStyle"
+        android:src="@drawable/ic_action_start_chat" />
+
+</RelativeLayout>

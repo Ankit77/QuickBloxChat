@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_chat_message_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded">
+
+    <android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/row_card"
+        style="@style/style_card_view_message">
+
+
+        <LinearLayout
+            android:id="@+id/layout_message_content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/qb_5dp">
+
+            <com.indianic.qbchat.comman.QbCustomTextViewMedium
+                android:id="@+id/text_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/qb_250dp"
+                android:textSize="@dimen/qb_12sp" />
+
+            <com.indianic.qbchat.comman.QbCustomTextViewMedium
+                android:id="@+id/text_image_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/qb_250dp"
+                android:textSize="@dimen/qb_12sp" />
+
+            <TextView
+                android:id="@+id/text_message_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/qb_9sp"
+                tools:text="Test message" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "694024219261",
+    "project_id": "chatmodulequickblox"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694024219261:android:5978ef10eef66cc3",
+        "android_client_info": {
+          "package_name": "com.chatmodule"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqyMaPBqFtmI2TmHzbMKvXNv2ra0TAhxI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

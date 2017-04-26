@@ -1,0 +1,155 @@
+<resources>
+    <string name="app_name">QuickBloxDemo</string>
+    <string name="font_medium">Helvetica_Neue_LT_Md.otf</string>
+
+    <string name="please_wait">Please wait…</string>
+    <string name="dlg_error">Error</string>
+    <string name="dlg_ok">OK</string>
+    <string name="dlg_cancel">Cancel</string>
+    <string name="dlg_retry">Retry</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="public_group_chat_cannot_be_deleted">Public Group chat can be deleted only by owner</string>
+    <string name="reconnect_alert">Reconnecting in %s seconds</string>
+    <string name="connection_error">Chat connection has been dropped</string>
+    <string name="connection_chat_error">Something going wrong...</string>
+    <string name="chat_edit_text_hint">Type a message</string>
+    <string name="chat_send_message_error">Failed to send a message</string>
+    <string name="connection_internet_error">Please check your internet connection.</string>
+
+    <string name="emailAddress_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="signin">SignIn</string>
+    <string name="signup">SignUp</string>
+
+
+    <string name="err_fullname">Please enter full name</string>
+    <string name="err_email">Please enter email address</string>
+    <string name="err_email_valid">Please enter valid email address</string>
+    <string name="err_password">Please enter password</string>
+    <string name="err_fullnamechar">Please enter minimum 3 charactor for full name</string>
+    <string name="err_passwordchar">Please enter minimum 8 charactor for password</string>
+    <string name="placeholder_username_you">%s (you)</string>
+    <string name="select_users_choose_users">Please, choose at least one participant</string>
+
+    <string name="select_users_get_users_error">Get users errors</string>
+    <string name="fullname">Full Name</string>
+
+
+
+    <!-- Settings strings for video call. -->
+    <string name="pref_default_value">Default</string>
+
+    <string name="pref_resolution_key">resolution_preference</string>
+    <string name="pref_resolution_title">Video resolution.</string>
+    <string name="pref_resolution_dlg">Enter RTC local video resolution.</string>
+    <string name="pref_resolution_default">-1</string>
+
+    <string name="pref_fps_key">fps_preference</string>
+    <string name="pref_fps_title">Camera fps.</string>
+    <string name="pref_fps_dlg">Enter local camera fps.</string>
+    <string name="pref_fps_default">0</string>
+
+    <string name="pref_startbitrate_key">startbitrate_preference</string>
+    <string name="pref_startbitrate_title">Start bitrate setting.</string>
+    <string name="pref_startbitrate_dlg">Start bitrate setting.</string>
+    <string name="pref_startbitrate_default">Default</string>
+
+    <string name="pref_startbitratevalue_key">startbitratevalue_preference</string>
+    <string name="pref_startbitratevalue_title">Video encoder start bitrate.</string>
+    <string name="pref_startbitratevalue_dlg">Enter video encoder start bitrate in kbps.(Max is 2000)</string>
+    <string name="pref_startbitratevalue_default">1000</string>
+
+    <string name="pref_videocodec_key">videocodec_preference</string>
+    <string name="pref_videocodec_title">Default video codec.</string>
+    <string name="pref_videocodec_dlg">Select default video codec.</string>
+    <string name="pref_videocodec_default">0</string>
+
+    <string name="pref_hwcodec_key">hwcodec_preference</string>
+    <string name="pref_hwcodec_title">Video codec hardware acceleration.</string>
+    <string name="pref_hwcodec_dlg">Use hardware accelerated video codec (if available).</string>
+    <string name="pref_hwcodec_default">true</string>
+
+    <string name="pref_value_enabled">Enabled</string>
+    <string name="pref_value_disabled">Disabled</string>
+
+    <string name="pref_room_server_url_key">room_server_url_preference</string>
+    <string name="pref_room_server_url_title">Room server URL.</string>
+    <string name="pref_room_server_url_dlg">Enter a room server URL.</string>
+    <string name="pref_room_server_url_default" translatable="false">https://apprtc.appspot.com</string>
+
+    <string name="pref_displayhud_key">displayhud_preference</string>
+    <string name="pref_displayhud_title">Display call statistics.</string>
+    <string name="pref_displayhud_dlg">Display call statistics.</string>
+    <string name="pref_displayhud_default" translatable="false">false</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_audiocodec_key">pref_audio_codec</string>
+    <string name="pref_audiocodec_title">Default audio codec</string>
+    <string name="pref_audiocodec_def">ISAC</string>
+    <string name="pref_audiocodec_dlg">Select default audio codec</string>
+    <string name="btn_screen_capture">screenShot</string>
+    <string name="accepted">Accepted</string>
+
+    <string name="outputing_audio_call">Outputing Audio Call - </string>
+    <string name="incoming_call">Incoming Call</string>
+    <string name="also_on_call">Also on call:</string>
+    <string name="edit_opponents_list">Edit opponents list</string>
+    <string name="incoming_audio_call">Incoming Audio Call</string>
+    <string name="incoming_video_call">Incoming Video Call</string>
+    <string name="connect">Connect...</string>
+    <string name="checking">Checking...</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+
+    <string name="users_tag">webrtcusers</string>
+
+    <string name="welcoming_message">Login as any user on this deviсe and another(s) users on another device</string>
+    <string name="select_user_to_call">Select Users You Want to Call</string>
+
+
+    <string name="btn_audio_call">AUDIO CALL</string>
+    <string name="btn_video_call">VIDEO CALL</string>
+    <string name="opponentsListActionBarTitle"><![CDATA[Video & Audio Group Chat Sample]]></string>
+    <string name="current_version">0.9.1</string>
+    <string name="rejected">Rejected</string>
+    <string name="noAnswer">No answer</string>
+    <string name="hungUp">Hung up</string>
+    <string name="closed">Closed</string>
+    <string name="time_out">Time Out</string>
+    <string name="failed">Failed</string>
+    <string name="WIFI_DISABLED">Call was stoped because connection was lost</string>
+    <string name="NETWORK_ABSENT">Connection lost</string>
+
+    <!-- Dialogs strings. -->
+    <string name="dlg_signal_error">Disconnected... Please check your Internet connection!</string>
+    <string name="action_log_out">Log out</string>
+    <string name="login_as">Login as</string>
+    <string name="logged_in_as">Logged In as</string>
+    <string name="string_signin">SignIn</string>
+    <string name="string_invalid_email_pass">Invalid email and password.</string>
+    <string name="messages">Messages</string>
+    <string name="no_message_found">No message found.</string>
+    <string name="start_chat">Start chat</string>
+    <string name="create_group">Create Group</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="signout">SignOut</string>
+    <string name="string_sendbroadcast">Send Broadcast</string>
+    <string name="string_create_group">Create Group</string>
+    <string name="string_userlist">User list</string>
+    <string name="string_broadcast_error">Minimum one participant select for create broadcast.</string>
+    <string name="string_groupcreate_error">Minimum one participant select for create group.</string>
+    <string name="string_broadcast_create_successfully">Broadcast sent successfully</string>
+    <string name="string_try_sometime">Please try after some time.</string>
+    <string name="string_broadcastfrom">"Broadcast from "</string>
+    <string name="string_groupname">Group Name</string>
+    <string name="string_ok">OK</string>
+<string name="string_groupnameError">Please enter group name.</string>
+    <string name="string_cancle">Cancel</string>
+    <string name="string_signup_error">Email already exist try to different</string>
+    <string name="string_alertmessage_delete">Are you sure you want delete this chat?</string>
+    <string name="string_yes">YES</string>
+    <string name="string_no">NO</string>
+    <string name="string_chatdeleted_success">Chat deleted successfully.</string>
+    <string name="audio_call">Audio Call</string>
+    <string name="video_call">Video Call</string>
+    <string name="call">Call</string>
+</resources>

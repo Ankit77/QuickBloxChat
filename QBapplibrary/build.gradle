@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile "com.quickblox:quickblox-android-sdk-core:2.5.2@aar"
+    compile("com.quickblox:quickblox-android-sdk-chat:2.5.2@aar") {
+        transitive = true
+    }
+    compile 'com.quickblox:quickblox-android-sdk-messages:2.5.1@aar'
+    compile "com.quickblox:quickblox-android-sdk-content:2.5.2@aar"
+    compile "se.emilsjolander:stickylistheaders:2.7.0"
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile "com.quickblox:quickblox-android-sdk-videochat-webrtc:2.5.1@aar"
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.1.1'
+}

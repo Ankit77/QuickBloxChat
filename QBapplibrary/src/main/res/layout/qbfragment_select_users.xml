@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    style="@style/MatchParent"
+    android:background="@color/text_color_white">
+
+    <ListView
+        android:id="@+id/list_select_users"
+        style="@style/ListViewWithoutDividerStyle"
+        android:layout_above="@+id/btn_startchat" />
+
+    <ProgressBar
+        android:id="@+id/progress_select_users"
+        style="@style/CenterProgressBarStyle" />
+
+    <Button
+        android:id="@+id/btn_startchat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/start_chat"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_white"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/linear_call_botton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_audiocall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_3dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/audio_call"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_white" />
+
+        <Button
+            android:id="@+id/btn_videocall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/video_call"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_white" />
+    </LinearLayout>
+</RelativeLayout>

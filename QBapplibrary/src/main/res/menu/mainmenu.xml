@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/new_group"
+        android:showAsAction="never"
+        android:title="@string/create_group" />
+    <item
+        android:id="@+id/new_broadcast"
+        android:showAsAction="never"
+        android:title="@string/broadcast" />
+    <item
+        android:id="@+id/new_call"
+        android:showAsAction="never"
+        android:title="@string/call" />
+    <item
+        android:id="@+id/signout"
+        android:showAsAction="never"
+        android:title="@string/signout" />
+
+</menu>

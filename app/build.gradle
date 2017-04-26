@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.chatmodule"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+repositories {
+    maven { url "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/" }
+
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile "com.quickblox:quickblox-android-sdk-core:2.5.2@aar"
+    compile "com.quickblox:quickblox-android-sdk-content:2.5.2@aar"
+    compile("com.quickblox:quickblox-android-sdk-chat:2.5.2@aar") {
+        transitive = true
+    }
+    compile project(':QBapplibrary')
+    compile "com.google.android.gms:play-services-gcm:8.3.0"
+}

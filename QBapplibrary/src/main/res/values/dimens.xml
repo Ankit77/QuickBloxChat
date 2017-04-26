@@ -1,0 +1,85 @@
+<resources>
+
+    <!--common text size-->
+    <dimen name="qb_9sp">9sp</dimen>
+    <dimen name="qb_10sp">10sp</dimen>
+    <dimen name="qb_11sp">11sp</dimen>
+    <dimen name="qb_12sp">12sp</dimen>
+    <dimen name="qb_13sp">13sp</dimen>
+    <dimen name="qb_14sp">14sp</dimen>
+    <dimen name="qb_15sp">15sp</dimen>
+    <dimen name="qb_16sp">16sp</dimen>
+    <dimen name="qb_17sp">17sp</dimen>
+    <dimen name="qb_18sp">18sp</dimen>
+    <dimen name="qb_19sp">19sp</dimen>
+    <dimen name="qb_20sp">20sp</dimen>
+    <dimen name="qb_21sp">21sp</dimen>
+    <dimen name="qb_22sp">22sp</dimen>
+
+
+    <!--common margin-->
+    <dimen name="qb_1dp">1dp</dimen>
+    <dimen name="qb_2dp">2dp</dimen>
+    <dimen name="qb_3dp">3dp</dimen>
+    <dimen name="qb_4dp">4dp</dimen>
+    <dimen name="qb_5dp">5dp</dimen>
+    <dimen name="qb_6dp">6dp</dimen>
+    <dimen name="qb_7dp">7dp</dimen>
+    <dimen name="qb_8dp">8dp</dimen>
+    <dimen name="qb_9dp">9dp</dimen>
+    <dimen name="qb_10dp">10dp</dimen>
+    <dimen name="qb_11dp">11dp</dimen>
+    <dimen name="qb_12dp">12dp</dimen>
+    <dimen name="qb_13dp">13dp</dimen>
+    <dimen name="qb_14dp">14dp</dimen>
+    <dimen name="qb_15dp">15dp</dimen>
+    <dimen name="qb_16dp">16dp</dimen>
+    <dimen name="qb_17dp">17dp</dimen>
+    <dimen name="qb_18dp">18dp</dimen>
+    <dimen name="qb_19dp">19dp</dimen>
+    <dimen name="qb_20dp">20dp</dimen>
+    <dimen name="qb_21dp">21dp</dimen>
+    <dimen name="qb_22dp">22dp</dimen>
+    <dimen name="qb_23dp">23dp</dimen>
+    <dimen name="qb_24dp">24dp</dimen>
+    <dimen name="qb_25dp">25dp</dimen>
+    <dimen name="qb_26dp">26dp</dimen>
+    <dimen name="qb_27dp">27dp</dimen>
+    <dimen name="qb_28dp">28dp</dimen>
+    <dimen name="qb_29dp">29dp</dimen>
+    <dimen name="qb_30dp">30dp</dimen>
+    <dimen name="qb_31dp">31dp</dimen>
+    <dimen name="qb_32dp">32dp</dimen>
+    <dimen name="qb_33dp">33dp</dimen>
+    <dimen name="qb_34dp">34dp</dimen>
+    <dimen name="qb_35dp">35dp</dimen>
+    <dimen name="qb_36dp">36dp</dimen>
+    <dimen name="qb_37dp">37dp</dimen>
+    <dimen name="qb_38dp">38dp</dimen>
+    <dimen name="qb_39dp">39dp</dimen>
+    <dimen name="qb_40dp">40dp</dimen>
+    <dimen name="qb_41dp">41dp</dimen>
+    <dimen name="qb_42dp">42dp</dimen>
+    <dimen name="qb_43dp">43dp</dimen>
+    <dimen name="qb_44dp">44dp</dimen>
+    <dimen name="qb_45dp">45dp</dimen>
+    <dimen name="qb_46dp">46dp</dimen>
+    <dimen name="qb_47dp">47dp</dimen>
+    <dimen name="qb_48dp">48dp</dimen>
+    <dimen name="qb_49dp">49dp</dimen>
+    <dimen name="qb_50dp">50dp</dimen>
+    <dimen name="qb_51dp">51dp</dimen>
+    <dimen name="qb_52dp">52dp</dimen>
+    <dimen name="qb_53dp">53dp</dimen>
+    <dimen name="qb_54dp">54dp</dimen>
+    <dimen name="qb_55dp">55dp</dimen>
+    <dimen name="qb_56dp">56dp</dimen>
+    <dimen name="qb_57dp">57dp</dimen>
+    <dimen name="qb_58dp">58dp</dimen>
+    <dimen name="qb_59dp">59dp</dimen>
+
+    <dimen name="qb_250dp">250dp</dimen>
+    <dimen name="qb_200dp">200dp</dimen>
+
+
+</resources>

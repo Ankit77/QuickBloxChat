@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_signup_linearMain"
+    android:background="@color/text_color_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/qb_16dp">
+
+    <EditText
+        android:id="@+id/activity_signup_edt_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_16dp"
+        android:hint="@string/fullname"
+        android:inputType="text"
+        android:maxLength="50"
+        android:padding="@dimen/qb_16dp" />
+
+    <EditText
+        android:id="@+id/activity_signup_edt_emailaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_16dp"
+        android:hint="@string/emailAddress_hint"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/qb_16dp" />
+
+    <EditText
+        android:id="@+id/activity_signup_edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_16dp"
+        android:hint="@string/password_hint"
+        android:maxLength="40"
+        android:inputType="textPassword"
+        android:padding="@dimen/qb_16dp" />
+
+
+    <Button
+        android:id="@+id/activity_signup_btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_16dp"
+        android:text="@string/signup"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>
