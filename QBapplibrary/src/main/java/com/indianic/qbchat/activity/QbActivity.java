@@ -55,6 +55,7 @@ import com.quickblox.videochat.webrtc.callbacks.QBRTCSignalingCallback;
 import com.quickblox.videochat.webrtc.exception.QBRTCException;
 import com.quickblox.videochat.webrtc.exception.QBRTCSignalException;
 
+import org.webrtc.CameraVideoCapturer;
 import org.webrtc.VideoCapturerAndroid;
 
 import java.io.Serializable;
@@ -176,18 +177,32 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
             }
         });
 
-        rtcClient.setCameraErrorHendler(new VideoCapturerAndroid.CameraErrorHandler() {
+        rtcClient.setCameraErrorHendler(new CameraVideoCapturer.CameraEventsHandler() {
             @Override
-            public void onCameraError(final String s) {
-                QbActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(QbActivity.this, s, Toast.LENGTH_LONG).show();
-                    }
-                });
+            public void onCameraError(String s) {
+                Toast.makeText(QbActivity.this, s, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCameraFreezed(String s) {
+
+            }
+
+            @Override
+            public void onCameraOpening(int i) {
+
+            }
+
+            @Override
+            public void onFirstFrameAvailable() {
+
+            }
+
+            @Override
+            public void onCameraClosed() {
+
             }
         });
-
 
         // Configure
         //
@@ -440,7 +455,7 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
     }
 
     @Override
-    public void onReceiveHangUpFromUser(QBRTCSession qbrtcSession, Integer integer) {
+    public void onReceiveHangUpFromUser(QBRTCSession qbrtcSession, Integer integer, Map<String, String> map) {
         if (qbrtcSession.equals(getCurrentSession())) {
 
             if (sessionUserCallback != null) {
@@ -459,6 +474,7 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
             });
         }
     }
+
 
     @Override
     public void onUserNoActions(QBRTCSession qbrtcSession, Integer integer) {
@@ -500,7 +516,7 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
 
     @Override
     public void onSessionStartClose(final QBRTCSession qbrtcSession) {
-        qbrtcSession.removeSessionnCallbacksListener(QbActivity.this);
+        qbrtcSession.removeSessionCallbacksListener(QbActivity.this);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -701,7 +717,7 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
     }
 
     public void releaseCurrentSession() {
-        this.currentSession.removeSessionnCallbacksListener(QbActivity.this);
+        this.currentSession.removeSessionCallbacksListener(QbActivity.this);
         this.currentSession.removeSignalingCallback(QbActivity.this);
         this.currentSession = null;
     }
@@ -714,7 +730,7 @@ public class QbActivity extends AppCompatActivity implements QBRTCClientSessionC
 
     public void removeRTCClientConnectionCallback(QBRTCSessionConnectionCallbacks clientConnectionCallbacks) {
         if (currentSession != null) {
-            currentSession.removeSessionnCallbacksListener(clientConnectionCallbacks);
+            currentSession.removeSessionCallbacksListener(clientConnectionCallbacks);
         }
     }
 

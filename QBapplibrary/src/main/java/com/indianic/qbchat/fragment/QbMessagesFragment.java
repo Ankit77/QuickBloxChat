@@ -97,7 +97,7 @@ public class QbMessagesFragment extends QbBaseFragment {
         alertDialogDelete.setMessage(getString(R.string.string_alertmessage_delete));
         alertDialogDelete.setPositiveButton(getString(R.string.string_yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                deleteChat(qbDialog, dialog);
+                deleteChat(qbDialog,true, dialog);
             }
         });
         alertDialogDelete.setNegativeButton(getString(R.string.string_no), new DialogInterface.OnClickListener() {
@@ -114,10 +114,10 @@ public class QbMessagesFragment extends QbBaseFragment {
      * @param qbDialog
      * @param dialog
      */
-    public void deleteChat(final QBDialog qbDialog, final DialogInterface dialog) {
+    public void deleteChat(final QBDialog qbDialog,boolean forcedelete, final DialogInterface dialog) {
         progressDialog.show();
         if (ConnectivityUtils.isNetworkConnected()) {
-            ChatHelper.getInstance().deleteDialog(qbDialog, new QBEntityCallback<Void>() {
+            ChatHelper.getInstance().deleteDialog(qbDialog,forcedelete, new QBEntityCallback<Void>() {
                 @Override
                 public void onSuccess(Void aVoid, Bundle bundle) {
                     progressDialog.cancel();
@@ -143,7 +143,7 @@ public class QbMessagesFragment extends QbBaseFragment {
                 @Override
                 public void onClick(View v) {
                     snackbar.dismiss();
-                    deleteChat(qbDialog, dialog);
+                    deleteChat(qbDialog,true, dialog);
                 }
             });
         }

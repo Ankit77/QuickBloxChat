@@ -61,11 +61,18 @@ public class ChatHelper {
     private QBChatService qbChatService;
     private QBRoster chatRoster;
     QBRosterListener rosterListener;
+
     public static synchronized ChatHelper getInstance() {
         if (instance == null) {
             QBSettings.getInstance().setLogLevel(LogLevel.DEBUG);
             QBChatService.setDebugEnabled(true);
+            QBChatService.setDefaultPacketReplyTimeout(10000);//set reply timeout in milliseconds for connection's packet.
             QBChatService.setDefaultAutoSendPresenceInterval(AUTO_PRESENCE_INTERVAL_IN_SECONDS);
+            QBChatService.ConfigurationBuilder chatServiceConfigurationBuilder = new QBChatService.ConfigurationBuilder();
+            chatServiceConfigurationBuilder.setSocketTimeout(60); //Sets chat socket's read timeout in seconds
+            chatServiceConfigurationBuilder.setKeepAlive(true); //Sets connection socket's keepAlive option.
+            chatServiceConfigurationBuilder.setUseTls(true); //Sets the TLS security mode used when making the connection. By default TLS is disabled.
+            QBChatService.setConfigurationBuilder(chatServiceConfigurationBuilder);
             instance = new ChatHelper();
         }
         return instance;
@@ -176,9 +183,10 @@ public class ChatHelper {
         QBUsers.getUsers(qbPagedRequestBuilder, callback);
     }
 
-    public void retrieveAllUsersFromId(ArrayList<Integer> usersIds,QBPagedRequestBuilder qbPagedRequestBuilder, QBEntityCallback<ArrayList<QBUser>> callback) {
-        QBUsers.getUsersByIDs(usersIds,qbPagedRequestBuilder, callback);
+    public void retrieveAllUsersFromId(ArrayList<Integer> usersIds, QBPagedRequestBuilder qbPagedRequestBuilder, QBEntityCallback<ArrayList<QBUser>> callback) {
+        QBUsers.getUsersByIDs(usersIds, qbPagedRequestBuilder, callback);
     }
+
     public void createDialogWithSelectedUsers(final List<QBUser> users, final int isAction, final String groupName,
                                               final QBEntityCallback<QBDialog> callback) {
         QBChatService.getInstance().getGroupChatManager().createDialog(QbDialogUtils.createDialog(users, isAction, groupName),
@@ -192,9 +200,9 @@ public class ChatHelper {
         );
     }
 
-    public void deleteDialogs(Collection<QBDialog> dialogs, QBEntityCallback<Void> callback) {
+    public void deleteDialogs(Collection<QBDialog> dialogs, boolean forcedelete, QBEntityCallback<Void> callback) {
         for (QBDialog dialog : dialogs) {
-            deleteDialog(dialog, new QBEntityCallback<Void>() {
+            deleteDialog(dialog, forcedelete, new QBEntityCallback<Void>() {
                 @Override
                 public void onSuccess(Void aVoid, Bundle bundle) {
                 }
@@ -208,12 +216,12 @@ public class ChatHelper {
         callback.onSuccess(null, null);
     }
 
-    public void deleteDialog(QBDialog qbDialog, QBEntityCallback<Void> callback) {
+    public void deleteDialog(QBDialog qbDialog, boolean forcedelete, QBEntityCallback<Void> callback) {
         if (qbDialog.getType() == QBDialogType.GROUP) {
-            QBChatService.getInstance().getGroupChatManager().deleteDialog(qbDialog.getDialogId(),
+            QBChatService.getInstance().getGroupChatManager().deleteDialog(qbDialog.getDialogId(), forcedelete,
                     new QbEntityCallbackWrapper<>(callback));
         } else if (qbDialog.getType() == QBDialogType.PRIVATE) {
-            QBChatService.getInstance().getPrivateChatManager().deleteDialog(qbDialog.getDialogId(),
+            QBChatService.getInstance().getPrivateChatManager().deleteDialog(qbDialog.getDialogId(), forcedelete,
                     new QbEntityCallbackWrapper<>(callback));
         } else if (qbDialog.getType() == QBDialogType.PUBLIC_GROUP) {
             Toaster.shortToast(R.string.public_group_chat_cannot_be_deleted);
@@ -309,7 +317,7 @@ public class ChatHelper {
 
     public void getUsersFromDialog(QBDialog dialog,
                                    final QBEntityCallback<ArrayList<QBUser>> callback) {
-        ArrayList<Integer> userIds = dialog.getOccupants();
+        List<Integer> userIds = dialog.getOccupants();
 
         ArrayList<QBUser> users = new ArrayList<>(userIds.size());
         for (Integer id : userIds) {

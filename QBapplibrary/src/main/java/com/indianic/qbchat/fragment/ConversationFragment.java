@@ -42,6 +42,7 @@ import com.quickblox.videochat.webrtc.callbacks.QBRTCSessionConnectionCallbacks;
 import com.quickblox.videochat.webrtc.exception.QBRTCException;
 import com.quickblox.videochat.webrtc.view.QBRTCVideoTrack;
 
+import org.webrtc.CameraVideoCapturer;
 import org.webrtc.VideoRenderer;
 
 import java.io.Serializable;
@@ -375,7 +376,7 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
                 ((QbActivity) getActivity()).hangUpCurrentSession();
                 handUpVideoCall.setEnabled(false);
                 handUpVideoCall.setActivated(false);
-                ((QbActivity)getActivity()).removeConversationFragment();
+                ((QbActivity) getActivity()).removeConversationFragment();
 
             }
         });
@@ -394,15 +395,16 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
                 if (mediaStreamManager == null) {
                     return;
                 }
-                boolean cameraSwitched = mediaStreamManager.switchCameraInput(new Runnable() {
+
+                mediaStreamManager.switchCameraInput(new CameraVideoCapturer.CameraSwitchHandler() {
                     @Override
-                    public void run() {
-                        mainHandler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                toggleCamerainternal(mediaStreamManager);
-                            }
-                        });
+                    public void onCameraSwitchDone(boolean b) {
+                        toggleCamerainternal(mediaStreamManager);
+                    }
+
+                    @Override
+                    public void onCameraSwitchError(String s) {
+
                     }
                 });
             }
